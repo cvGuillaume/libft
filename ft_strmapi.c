@@ -1,11 +1,11 @@
 #include "libft.h"
 
-char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
-	int     i;
+	int	 i;
 
-    i = 0;
+	i = 0;
 	if (!(str = ft_strdup(s)))
 		return (NULL);
 	while (str[i])

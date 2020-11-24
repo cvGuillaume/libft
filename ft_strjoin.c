@@ -2,7 +2,7 @@
 
 int		ft_strlen_strlen(char **strs, int size)
 {
-    int i;
+	int i;
 	int final;
 
 	i = 0;
