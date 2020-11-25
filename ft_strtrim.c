@@ -28,7 +28,7 @@ char		*ft_strtrim(char const *s)
 		|| s[ft_strlen(s) - j] == '\t')
 		j++;
 	j = ft_strlen(s) - i - j;
-	if (!(str = malloc(sizeof(char) * (j + 1))))
+	if (!(str = ft_calloc((j + 1), sizeof(char))))
 		return (NULL);
 	while (z < j)
 	{
