@@ -12,21 +12,14 @@
 
 #include "libft.h"
 
-int		spot_charset(char c, char *charset)
+int		spot_charset(char c, char charset)
 {
-	int		i;
-
-	i = 0;
-	while (charset[i])
-	{
-		if (c == charset[i])
-			return (1);
-		i++;
-	}
+	if (c == charset)
+		return (1);
 	return (0);
 }
 
-int		compte_mot(char *str, char *charset)
+int		compte_mot(char *str, char charset)
 {
 	int		counter;
 	int		i;
@@ -49,7 +42,7 @@ int		compte_mot(char *str, char *charset)
 	return (counter);
 }
 
-char	**sep(char **mat, char *str, char *charset, int len)
+char	**sep(char **mat, char *str, char charset, int len)
 {
 	int	y;
 	int	x;
@@ -77,14 +70,14 @@ char	**sep(char **mat, char *str, char *charset, int len)
 	return (mat);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char *str, char c)
 {
 	char	**mat;
 	int		len;
 
 	len = 0;
-	if (!(mat = (char**)ft_calloc((compte_mot(str, charset) + 1), sizeof(char*))))
+	if (!(mat = (char**)ft_calloc((compte_mot(str, c) + 1), sizeof(char*))))
 		return (NULL);
-	sep(mat, str, charset, len);
+	sep(mat, str, c, len);
 	return (mat);
 }

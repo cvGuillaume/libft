@@ -12,7 +12,21 @@
 
 #include "libft.h"
 
-char		*ft_strtrim(char const *s)
+int		spot_set(char c, const char *set)
+{
+	int		i;
+
+	i = 0;
+	while (set[i])
+	{
+		if (c == set[i])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
@@ -20,22 +34,16 @@ char		*ft_strtrim(char const *s)
 	char	*str;
 
 	i = 0;
-	j = 2;
+	j = ft_strlen(s1);
 	z = 0;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+	while (spot_set(s1[i], set) && s1[i])
 		i++;
-	while (s[ft_strlen(s) - j] == ' ' || s[ft_strlen(s) - j] == '\n'
-		|| s[ft_strlen(s) - j] == '\t')
-		j++;
-	j = ft_strlen(s) - i - j;
-	if (!(str = ft_calloc((j + 1), sizeof(char))))
+	while (spot_set(s1[j - 1], set) && j > i)
+		j--;
+	if (!(str = malloc((j - i + 1) * sizeof(*s1))))
 		return (NULL);
-	while (z < j)
-	{
-		str[z] = s[i];
-		z++;
-		i++;
-	}
+	while (i < j)
+		str[z++] = s1[i++];
 	str[z] = '\0';
 	return (str);
 }

@@ -12,63 +12,27 @@
 
 #include "libft.h"
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	int i;
-	int j;
+	size_t		i;
+	size_t		size;
+	char		*res;
 
 	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (src[j])
-	{
-		dest[i] = src[j];
-		j++;
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
-
-int		ft_strlen_strlen(char **strs, int size)
-{
-	int i;
-	int final;
-
-	i = 0;
-	final = 0;
-	if (size == 0)
-		return (0);
-	while (i < size)
-		final += ft_strlen(strs[i++]);
-	return (final);
-}
-
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	char	*final;
-	int		len;
-	int		i;
-
-	if (size <= 0 || !sep || !strs)
-	{
-		if (!(final = ft_calloc(1, sizeof(char))))
-			return (NULL);
-		final[0] = '\0';
-		return (final);
-	}
-	len = ft_strlen(sep) * (size - 1) + ft_strlen_strlen(strs, size) + 1;
-	if (!(final = ft_calloc(len, sizeof(char))))
+	size = ft_strlen(s1) + ft_strlen(s2);
+	if (!(res = malloc((size + 1) * sizeof(char))))
 		return (NULL);
-	final[0] = 0;
-	i = 0;
-	while (i < size)
+	while (s1[i])
 	{
-		ft_strcat(final, strs[i++]);
-		if (i < size)
-			ft_strcat(final, sep);
+		res[i] = s1[i];
+		i++;
 	}
-	final[len - 1] = '\0';
-	return (final);
+	i = 0;
+	while (s2[i])
+	{
+		res[ft_strlen(s1) + i] = s2[i];
+		i++;
+	}
+	res[ft_strlen(s1) + i] = '\0';
+	return (res);
 }
