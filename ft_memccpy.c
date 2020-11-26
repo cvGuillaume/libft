@@ -30,17 +30,3 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	}
 	return (NULL);
 }
-
-// void	*ft_memccpy(void *dst, const void *src, int c,
-// 					size_t n)
-// {
-// 	const void	*p = ft_memchr(src, c, n);
-
-// 	if (p != NULL)
-// 	{
-// 		n = p - src + 1;
-// 		return (ft_memcpy(dst, src, n) + n);
-// 	}
-// 	ft_memcpy(dst, src, n);
-// 	return (NULL);
-// }

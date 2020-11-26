@@ -17,8 +17,8 @@ int		ft_size_int_10(long nbr)
 	int		i;
 
 	i = 0;
-  if (nbr == 0)
-    return (1);
+	if (nbr == 0)
+    	return (1);
 	if (nbr < 0)
 	{
 		i++;
@@ -43,8 +43,8 @@ char	*ft_itoa(int n)
 	if (!(res = ft_calloc(i + 1, sizeof(char))))
 		return (NULL);
 	res[--i] = '\0';
-  if (nbr == 0)
-    res[0] = '0';
+	if (nbr == 0)
+    	res[0] = '0';
 	if (nbr < 0)
 	{
 		res[0] = '-';

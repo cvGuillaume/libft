@@ -13,9 +13,9 @@
 #include "libft.h"
 #include "limits.h"
 
-int ft_isspace(char c)
+int		ft_isspace(char c)
 {
-	return(c == '\f' || c == '\t' || c == ' '
+	return (c == '\f' || c == '\t' || c == ' '
 		|| c == '\v' || c == '\n' || c == '\r');
 }
 

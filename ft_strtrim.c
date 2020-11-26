@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int		spot_set(char c, const char *set)
+int			spot_set(char c, const char *set)
 {
 	int		i;
 
