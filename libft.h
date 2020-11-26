@@ -6,16 +6,17 @@
 /*   By: gcornet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 15:03:32 by gcornet-          #+#    #+#             */
-/*   Updated: 2020/11/24 15:03:34 by gcornet-         ###   ########.fr       */
+/*   Updated: 2020/11/26 19:47:30 by gcornet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	LIBFT_H
-#define	LIBFT_H
-#include <sys/types.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <sys/types.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
 
 size_t	ft_strlen(const char *str);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);

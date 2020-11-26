@@ -6,7 +6,7 @@
 /*   By: gcornet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 14:55:41 by gcornet-          #+#    #+#             */
-/*   Updated: 2020/11/25 17:43:43 by gcornet-         ###   ########.fr       */
+/*   Updated: 2020/11/26 19:50:52 by gcornet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_isspace(char c)
 
 int		ft_atoi(char const *str)
 {
-	unsigned long long 	final;
+	unsigned long long	final;
 	int					sign;
 
 	final = 0;

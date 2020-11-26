@@ -6,7 +6,7 @@
 /*   By: gcornet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 14:56:45 by gcornet-          #+#    #+#             */
-/*   Updated: 2020/11/24 14:56:47 by gcornet-         ###   ########.fr       */
+/*   Updated: 2020/11/26 19:48:12 by gcornet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int		ft_size_int_10(long nbr)
 
 	i = 0;
 	if (nbr == 0)
-    	return (1);
+		return (1);
 	if (nbr < 0)
 	{
 		i++;
@@ -44,7 +44,7 @@ char	*ft_itoa(int n)
 		return (NULL);
 	res[--i] = '\0';
 	if (nbr == 0)
-    	res[0] = '0';
+		res[0] = '0';
 	if (nbr < 0)
 	{
 		res[0] = '-';
