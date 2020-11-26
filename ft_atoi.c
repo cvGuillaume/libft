@@ -6,34 +6,38 @@
 /*   By: gcornet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/24 14:55:41 by gcornet-          #+#    #+#             */
-/*   Updated: 2020/11/24 14:55:43 by gcornet-         ###   ########.fr       */
+/*   Updated: 2020/11/25 17:43:43 by gcornet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "limits.h"
+
+int ft_isspace(char c)
+{
+	return(c == '\f' || c == '\t' || c == ' '
+		|| c == '\v' || c == '\n' || c == '\r');
+}
 
 int		ft_atoi(char const *str)
 {
-	int			i;
-	long int	final;
-	int			sign;
+	unsigned long long 	final;
+	int					sign;
 
-	sign = 1;
-	i = 0;
 	final = 0;
-	while (str[i] == '\f' || str[i] == '\t' || str[i] == ' '
-		|| str[i] == '\v' || str[i] == '\n' || str[i] == '\r')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	sign = 1;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
+		if (*str == '-')
 			sign = -sign;
-		i++;
+		str++;
 	}
-	while ('0' <= str[i] && str[i] <= '9')
+	while (ft_isdigit(*str))
 	{
-		final = final * 10 + str[i] - '0';
-		i++;
+		final = final * 10 + *str - '0';
+		str++;
 	}
-	return (int)(sign * final);
+	return (sign * final);
 }

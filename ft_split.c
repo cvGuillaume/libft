@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 int		spot_charset(char c, char *charset)
 {
@@ -65,7 +65,7 @@ char	**sep(char **mat, char *str, char *charset, int len)
 			z++;
 		while (str[z++] && spot_charset(str[z], charset) == 0)
 			len++;
-		if (!(mat[y] = ft_calloc(len + 1, sizeof(char))))
+		if (!(mat[y] = (char*)ft_calloc(len + 1, sizeof(char))))
 			return (0);
 		x = -1;
 		while (++x <= len)
@@ -83,7 +83,7 @@ char	**ft_split(char *str, char *charset)
 	int		len;
 
 	len = 0;
-	if (!(mat = ft_calloc(compte_mot(str, charset) + 1), sizeof(char*)))
+	if (!(mat = (char**)ft_calloc((compte_mot(str, charset) + 1), sizeof(char*))))
 		return (NULL);
 	sep(mat, str, charset, len);
 	return (mat);
