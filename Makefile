@@ -59,7 +59,7 @@ BONUS =	ft_lstnew.c			\
 BONUS_OBJS		= $(BONUS:.c=.o)
 OBJS			= $(SRCS:.c=.o)
 
-CC				= gcc
+CC				= @gcc
 RM				= @rm -f
 CFLAGS			= -Wall -Wextra -Werror -I.
 
@@ -68,7 +68,7 @@ NAME			= libft.a
 all:			$(NAME)
 
 $(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+				@ar rcs $(NAME) $(OBJS)
 
 clean:
 				$(RM) $(OBJS) $(BONUS_OBJS)
@@ -79,6 +79,6 @@ fclean:			clean
 re:				fclean $(NAME)
 
 bonus:			$(OBJS) $(BONUS_OBJS)
-				ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+				@ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY:			all clean fclean re bonus
